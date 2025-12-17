@@ -10,7 +10,10 @@
         "optimize:svg": "svgo -f icons/ -r",
         "build": "npm run build:icons && npm run build:tsc",
         "build:tsc": "tsup --minify",
-        "build:icons": "svgr -- icons",
+        "build:icons": "npm run build:icons:main && npm run build:icons:misc && npm run build:icons:logos",
+        "build:icons:main": "svgr -- icons",
+        "build:icons:misc": "svgr --out-dir src/misc misc",
+        "build:icons:logos": "svgr --out-dir src/logos logos",
         "release": "standard-version --release-as patch && git push --follow-tags && npm publish"
     },
     "files": [

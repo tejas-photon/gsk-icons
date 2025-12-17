@@ -1,11 +1,11 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-    entry: ["src/icons"],
+    entry: ["src/icons", "src/misc", "src/logos"],
     splitting: true,
     sourcemap: false,
     clean: true,
-    bundle: false,
+    bundle: true,
     format: ["esm", "cjs"],
     dts: true,
     legacyOutput: false,
